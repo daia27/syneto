@@ -4,24 +4,29 @@ import './App.scss';
 import "bootstrap/dist/css/bootstrap.css"
 import Home from "./views/Home";
 import Navbar from "./components/Navbar";
+import {AppContext} from './Context';
 
 class App extends Component {
+
+
   render() {
     return (
-      <div className="App">
-          <Navbar/>
-          <Router>
-              <div>
-                  <ul>
-                      <li>
-                          <Link to="/">Home</Link>
-                      </li>
-                  </ul>
+        <AppContext.Provider value={{state: this.state, setState: this.setState}}>
+            <div className="App">
+                <Router>
+                  <div>
+                      <Navbar/>
+                      <ul>
+                          <li>
+                              <Link to="/">Home</Link>
+                          </li>
+                      </ul>
 
-                  <Route exact path="/" component={Home} />
-              </div>
-          </Router>
-      </div>
+                      <Route exact path="/" component={Home} />
+                  </div>
+                </Router>
+            </div>
+        </AppContext.Provider>
     );
   }
 }
