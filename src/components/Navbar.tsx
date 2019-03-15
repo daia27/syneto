@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import Search from "./Search";
+import {ICategory} from "../App";
+import {AppContext, IAppContext} from "../Context";
 
-class Navbar extends Component {
+interface INavbarProps {
+    context: IAppContext;
+}
+class Navbar extends Component<INavbarProps> {
+
+    renderCategories(){
+        return this.props.context.state.categories.map((item: ICategory) => {
+            return (
+                <a key={item.id} className="dropdown-item" href="#">{item.title}</a>
+            )
+        })
+    }
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,13 +32,10 @@ class Navbar extends Component {
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
+                                Categories
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="#">Action</a>
-                                <a className="dropdown-item" href="#">Another action</a>
-                                <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="#">Something else here</a>
+                                {this.renderCategories()}
                             </div>
                         </li>
                     </ul>
@@ -35,4 +45,11 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar
+const withContext = (Component: typeof Navbar) => {
+    return (props:any) => (
+        <AppContext.Consumer>
+            {(context) => <Component {...props} context={context}/>}
+        </AppContext.Consumer>
+    )
+};
+export default withContext(Navbar);

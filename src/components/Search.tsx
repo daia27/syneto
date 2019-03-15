@@ -1,10 +1,24 @@
 import React, {Component, ReactComponentElement} from 'react';
 import {AppContext} from '../Context';
 
-class Search extends Component {
+interface IProps{
+    context: any
+}
+
+interface IState{
+   term: string
+}
+
+class Search extends Component<IProps, IState> {
     state = {
         term: ''
     };
+
+    constructor(props:IProps, state:IState) {
+        super(props, state);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
     handleChange(event: React.ChangeEvent<HTMLInputElement>){
         this.setState({
@@ -14,6 +28,7 @@ class Search extends Component {
 
     handleSubmit(event: React.FormEvent<HTMLFormElement>){
        event.preventDefault();
+       console.log("submit")
     }
 
     render() {
