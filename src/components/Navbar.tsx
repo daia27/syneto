@@ -7,6 +7,7 @@ import {AppContext, IAppContext} from "../Context";
 interface INavbarProps {
     context: IAppContext;
 }
+
 class Navbar extends Component<INavbarProps> {
 
     renderCategories(){
@@ -16,6 +17,7 @@ class Navbar extends Component<INavbarProps> {
             )
         })
     }
+
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
