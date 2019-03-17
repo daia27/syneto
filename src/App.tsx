@@ -9,7 +9,9 @@ import {youtube} from './api/youtube';
 
 interface IAppState {
     categories: ICategory[],
-    videos: IVideoThumbnail[]
+    videos: IVideoThumbnail[],
+    activeCategory: string,
+    activeQuery: string
 }
 
 interface ICategoryResponse {
@@ -39,10 +41,7 @@ interface IVideoResponse {
                 channelTitle: string,
                 title: string,
                 thumbnails: {
-                    default: {
-                        url: string
-                    }
-                    medium: {
+                    high: {
                         url: string
                     }
                 }
@@ -63,7 +62,9 @@ export interface IVideoThumbnail {
 export class App extends Component<{}, IAppState> {
     state = {
         categories: [],
-        videos: []
+        videos: [],
+        activeCategory: '',
+        activeQuery: ''
     };
 
     defaultCategory = '19';
@@ -75,19 +76,6 @@ export class App extends Component<{}, IAppState> {
             }
         });
 
-        const videosResponse: IVideoResponse = await youtube.get('/search', {
-            params: {
-                type: 'video',
-                regionCode: 'US',
-                videoCategoryId: this.defaultCategory,
-                q: '',
-                maxResults: '10',
-            }
-        });
-
-        console.log(categoriesResponse);
-        console.log(videosResponse);
-
         this.setState({
             categories: categoriesResponse.data.items.map((item) => {
                 return {
@@ -95,21 +83,42 @@ export class App extends Component<{}, IAppState> {
                     title: item.snippet.title
                 }
             }),
+        });
+
+        this.getVideos(this.defaultCategory);
+    }
+
+    async getVideos(categoryId: string, query: string = '') {
+
+        const videosResponse: IVideoResponse = await youtube.get('/search', {
+            params: {
+                type: 'video',
+                regionCode: 'US',
+                videoCategoryId: categoryId,
+                q: query,
+                maxResults: '10',
+            }
+        });
+
+        this.setState({
             videos: videosResponse.data.items.map((item) => {
                 return {
                     videoId: item.id.videoId,
                     channelId: item.snippet.channelId,
                     channelTitle: item.snippet.channelTitle,
                     title: item.snippet.title,
-                    thumbnail: item.snippet.thumbnails.medium.url
+                    thumbnail: item.snippet.thumbnails.high.url
                 }
-            })
+            }),
+            activeCategory: categoryId,
+            activeQuery: query
         });
+        console.log(videosResponse);
     }
 
     render() {
         return (
-            <AppContext.Provider value={{state: this.state, setState: this.setState}}>
+            <AppContext.Provider value={{state: this.state, setState: this.setState.bind(this), getVideos: this.getVideos.bind(this)}}>
                 <div className="App">
                     <Router>
                         <div>
