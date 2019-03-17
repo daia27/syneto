@@ -3,8 +3,7 @@ import {Link} from "react-router-dom";
 import Search from "./Search";
 import {ICategory} from "../App";
 import {AppContext, IAppContext} from "../Context";
-// import logo from '../../public/clipneto.png';
-
+import './Navbar.scss'
 interface INavbarProps {
     context: IAppContext;
 }
@@ -43,15 +42,15 @@ class Navbar extends Component<INavbarProps> {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="collapse navbar-collapse" id="navbar-content">
                     <Search/>
-                    <ul className="navbar-nav mr-auto">
+                    <ul className="navbar-nav">
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <a className="nav-link dropdown-toggle" href="#" id="navbar-dropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {this.activeCategory ? this.activeCategory.title : 'Choose a category'}
                             </a>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div className="dropdown-menu" aria-labelledby="navbar-dropdown">
                                 {this.renderCategories()}
                             </div>
                         </li>

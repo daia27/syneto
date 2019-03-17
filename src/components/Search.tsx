@@ -28,14 +28,15 @@ class Search extends Component<IProps, IState> {
 
     handleSubmit(event: React.FormEvent<HTMLFormElement>){
        event.preventDefault();
-       this.props.context.getVideos(undefined, this.props.context.state.activeQuery)
+       if(this.props.context.state.activeQuery !== '')
+           this.props.context.getVideos(undefined, this.props.context.state.activeQuery)
     }
 
     render() {
         return (
-            <form className="form-inline my-2 my-lg-0" onSubmit={this.handleSubmit}>
+            <form className="form-inline my-2 my-lg-0 ml-3" onSubmit={this.handleSubmit}>
                 <input className="form-control mr-sm-2" type="search" placeholder="Search for a video" aria-label="Search" onChange={this.handleChange} value={this.props.context.state.activeQuery}/>
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
         );
     }

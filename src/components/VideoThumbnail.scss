@@ -1,0 +1,26 @@
+.video-thumbnail {
+    display: block;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    .video-thumbnail-image{
+        width: 100%;
+    }
+    .video-thumbnail-content {
+        .title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            line-height: 1.1rem;
+            height: 34px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .author {
+            font-size: 0.8rem;
+            color: dimgrey;
+        }
+    }
+}

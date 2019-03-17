@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {AppContext, IAppContext} from "../Context";
 import {ICategory, IVideoThumbnail} from "../App";
+import {VideoThumbnail} from "../components/VideoThumbnail";
 
 interface IHomeProps {
     context: IAppContext;
@@ -12,11 +13,7 @@ class Home extends Component<IHomeProps> {
         return this.props.context.state.videos.map((item: IVideoThumbnail) => {
             return (
                 <div className='col-lg-2 col-md-5 col-sm-5 col-10' key={item.videoId}>
-                    <a className="video-thumbnail" href="#">
-                        <img src={item.thumbnail} alt={item.title}/>
-                        {item.title}
-                        {item.channelTitle}
-                    </a>
+                    <VideoThumbnail videoId={item.videoId} image={item.thumbnail} title={item.title} author={item.channelTitle}/>
                 </div>
             )
         })
@@ -24,7 +21,7 @@ class Home extends Component<IHomeProps> {
 
     render() {
         return (
-            <div className='container'>
+            <div className='container pt-4'>
                 <div className='row'>
                     {this.renderVideos()}
                 </div>

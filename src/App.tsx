@@ -6,6 +6,7 @@ import Home from "./views/Home";
 import Navbar from "./components/Navbar";
 import {AppContext} from './Context';
 import {youtube} from './api/youtube';
+import VideoDetail from "./views/VideoDetail";
 
 interface IAppState {
     categories: ICategory[],
@@ -123,12 +124,8 @@ export class App extends Component<{}, IAppState> {
                     <Router>
                         <div>
                             <Navbar/>
-                            <ul>
-                                <li>
-                                    <Link to="/">Home</Link>
-                                </li>
-                            </ul>
                             <Route exact path="/" component={Home} />
+                            <Route exact path="/video/:videoId" component={VideoDetail} />
                         </div>
                     </Router>
                 </div>
