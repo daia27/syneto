@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fd922e1-22f9-432c-8ea2-f8f72923fc08" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/youtube.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/youtube.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -61,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/src/api/youtube.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
-              <caret line="1" column="52" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
+              <caret line="1" column="13" lean-forward="true" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -209,12 +210,12 @@
       <updated>1552408681436</updated>
       <workItem from="1552408685837" duration="4345000" />
       <workItem from="1552501505477" duration="14995000" />
-      <workItem from="1552844410665" duration="31718000" />
+      <workItem from="1552844410665" duration="32012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51058000" />
+    <option name="totallyTimeSpent" value="51352000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -428,7 +429,7 @@
     <entry file="file://$PROJECT_DIR$/src/api/youtube.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
-          <caret line="1" column="52" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
+          <caret line="1" column="13" lean-forward="true" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="52" />
         </state>
       </provider>
     </entry>
