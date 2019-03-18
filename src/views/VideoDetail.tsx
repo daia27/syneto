@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {AppContext, IAppContext} from "../Context";
 import {RouteComponentProps} from "react-router";
 import {youtube} from "../api/youtube";
-import './VideoDetails.scss'
+import './VideoDetail.scss'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "react-router-dom";
 
@@ -93,8 +93,8 @@ class VideoDetail extends Component<IVideoDetailProps, IVideoDetailState> {
     }
 
     renderComments() {
-        return this.state.comments.map((item: IComment) => (
-            <div className="comment-wrapper">
+        return this.state.comments.map((item: IComment, itemIndex: number) => (
+            <div className="comment-wrapper" key={itemIndex}>
                 <div className="comment">
                     <div><strong>{item.author}</strong></div>
                     <div>{item.text}</div>
@@ -102,8 +102,8 @@ class VideoDetail extends Component<IVideoDetailProps, IVideoDetailState> {
 
                 { item.replies.length > 0 ?
                     <div className="replies">
-                        { item.replies.map((subItem) => (
-                            <div className="comment">
+                        { item.replies.map((subItem, subItemIndex: number) => (
+                            <div className="comment" key={subItemIndex}>
                                 <div><strong>{subItem.author}</strong></div>
                                 <div>{subItem.text}</div>
                             </div>
@@ -113,7 +113,6 @@ class VideoDetail extends Component<IVideoDetailProps, IVideoDetailState> {
             </div>
         ));
     }
-
 
     render() {
         return (
@@ -132,9 +131,9 @@ class VideoDetail extends Component<IVideoDetailProps, IVideoDetailState> {
                                <div className="video-views-count">{this.state.viewCount} views</div>
                                <div className="video-likes-dislikes">
                                    {this.state.upVotes}
-                                       <FontAwesomeIcon icon="thumbs-up"/>
+                                   <FontAwesomeIcon icon="thumbs-up"/>
                                    {this.state.downVotes}
-                                       <FontAwesomeIcon icon="thumbs-down" />
+                                   <FontAwesomeIcon icon="thumbs-down" />
                                </div>
                            </div>
                            <div className="video-author"><strong>{this.state.author}</strong></div>
