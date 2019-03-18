@@ -1,0 +1,15 @@
+.authenticate-user {
+    .profile-image {
+        height: 30px;
+        border-radius: 4px;
+        margin-left: 5px;
+    }
+
+    .dropdown-toggle::after {
+        display: none;
+    }
+
+    .dropdown-item {
+        cursor: pointer;
+    }
+}

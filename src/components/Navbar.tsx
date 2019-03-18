@@ -3,7 +3,9 @@ import {Link} from "react-router-dom";
 import Search from "./Search";
 import {ICategory} from "../App";
 import {AppContext, IAppContext} from "../Context";
+import {Authenticate} from "./Authenticate";
 import './Navbar.scss'
+
 interface INavbarProps {
     context: IAppContext;
 }
@@ -37,7 +39,7 @@ class Navbar extends Component<INavbarProps> {
                 <img className="d-inline-block align-top mr-2" src="/clipneto.png" height="30" alt="clipneto app logo"/>
                 <Link to="/" className="navbar-brand"><strong>clipneto</strong></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        data-target="#navbar-content" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -53,6 +55,9 @@ class Navbar extends Component<INavbarProps> {
                             <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-dropdown">
                                 {this.renderCategories()}
                             </div>
+                        </li>
+                        <li>
+                            <Authenticate/>
                         </li>
                     </ul>
                 </div>
