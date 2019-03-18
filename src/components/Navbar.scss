@@ -4,4 +4,8 @@
 
 #navbar-content {
   justify-content: space-between;
+  .dropdown-menu {
+    max-height: 300px;
+    overflow: auto;
+  }
 }

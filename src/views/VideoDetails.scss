@@ -1,0 +1,53 @@
+.video-details{
+    text-align: left;
+    width: 840px;
+    margin-left: 135px;
+    .video-title {
+        font-size: 1.3rem;
+        margin-top: 0.8rem;
+    }
+    .video-views-count {
+        font-size: 1rem;
+    }
+    .video-author {
+        font-size: 1rem;
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+    .video-statistics {
+        margin-top: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+        color: dimgrey;
+        .video-likes-dislikes {
+            .svg-inline--fa.fa-thumbs-up {
+                margin-right: 15px;
+                margin-left: 5px;
+            }
+            .svg-inline--fa.fa-thumbs-down {
+                margin-left: 5px;
+            }
+        }
+    }
+    .video-description {
+        margin-bottom: 1rem;
+    }
+}
+
+.comment {
+    display: block;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.replies {
+    padding-left: 2rem;
+}
+
+.back-button {
+    position: absolute;
+    z-index: 1;
+    .svg-inline--fa.fa-arrow-alt-circle-left {
+        margin-right: 5px;
+    }
+}

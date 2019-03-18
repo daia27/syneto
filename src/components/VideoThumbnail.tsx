@@ -10,12 +10,9 @@ interface IVideoThumbnailProps {
 }
 
 export class VideoThumbnail extends Component<IVideoThumbnailProps> {
-    handleVideoSelect(event: React.MouseEvent<HTMLElement>){
-        console.log("video event");
-    }
     render() {
         return (
-            <Link to={`/video/${this.props.videoId}`} className='video-thumbnail' onClick={this.handleVideoSelect}>
+            <Link to={`/video/${this.props.videoId}`} className='video-thumbnail'>
                 <img className='video-thumbnail-image' src={this.props.image} alt={this.props.title}/>
                 <div className='video-thumbnail-content'>
                     <div className='title'>{this.props.title}</div>

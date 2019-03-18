@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faThumbsUp, faThumbsDown, faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons'
 import './App.scss';
 import 'bootstrap/dist/js/bootstrap'
 import Home from "./views/Home";
@@ -7,6 +9,10 @@ import Navbar from "./components/Navbar";
 import {AppContext} from './Context';
 import {youtube} from './api/youtube';
 import VideoDetail from "./views/VideoDetail";
+
+library.add(faThumbsUp);
+library.add(faThumbsDown);
+library.add(faArrowAltCircleLeft);
 
 interface IAppState {
     categories: ICategory[],
@@ -114,7 +120,6 @@ export class App extends Component<{}, IAppState> {
             activeCategory: categoryId,
             activeQuery: query
         });
-        console.log(videosResponse);
     }
 
     render() {

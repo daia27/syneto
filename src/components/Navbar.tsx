@@ -50,7 +50,7 @@ class Navbar extends Component<INavbarProps> {
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {this.activeCategory ? this.activeCategory.title : 'Choose a category'}
                             </a>
-                            <div className="dropdown-menu" aria-labelledby="navbar-dropdown">
+                            <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-dropdown">
                                 {this.renderCategories()}
                             </div>
                         </li>
