@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fd922e1-22f9-432c-8ea2-f8f72923fc08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/youtube.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/youtube.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -51,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Search.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="282">
@@ -60,7 +57,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/api/youtube.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
@@ -106,7 +103,6 @@
         <option value="$PROJECT_DIR$/src/components/VideoThumbnail.scss" />
         <option value="$PROJECT_DIR$/src/views/VideoDetails.scss" />
         <option value="$PROJECT_DIR$/src/components/Navbar.scss" />
-        <option value="$PROJECT_DIR$/src/api/youtube.tsx" />
         <option value="$PROJECT_DIR$/src/components/VideoThumbnail.tsx" />
         <option value="$PROJECT_DIR$/src/components/Navbar.tsx" />
         <option value="$PROJECT_DIR$/src/components/Authenticate.scss" />
@@ -116,6 +112,7 @@
         <option value="$PROJECT_DIR$/src/History.tsx" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/components/Search.tsx" />
+        <option value="$PROJECT_DIR$/src/api/youtube.tsx" />
       </list>
     </option>
   </component>
@@ -212,12 +209,12 @@
       <updated>1552408681436</updated>
       <workItem from="1552408685837" duration="4345000" />
       <workItem from="1552501505477" duration="14995000" />
-      <workItem from="1552844410665" duration="31209000" />
+      <workItem from="1552844410665" duration="31718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50549000" />
+    <option name="totallyTimeSpent" value="51058000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -377,13 +374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/youtube.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="52" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/VideoDetail.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="763">
@@ -432,6 +422,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="37" column="48" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/youtube.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="52" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
         </state>
       </provider>
     </entry>
