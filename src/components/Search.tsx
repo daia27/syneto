@@ -1,17 +1,20 @@
 import React, {Component, ReactComponentElement} from 'react';
 import {AppContext} from '../Context';
+import {Redirect, RouteComponentProps, withRouter} from "react-router";
 
-interface IProps{
+interface IProps extends RouteComponentProps {
     context: any
 }
 
-interface IState{
-   term: string
+interface IState {
+    term: string,
+    redirectToVideosList: boolean
 }
 
 class Search extends Component<IProps, IState> {
     state = {
-        term: ''
+        term: '',
+        redirectToVideosList: false
     };
 
     constructor(props:IProps, state:IState) {
@@ -28,8 +31,13 @@ class Search extends Component<IProps, IState> {
 
     handleSubmit(event: React.FormEvent<HTMLFormElement>){
        event.preventDefault();
-       if(this.props.context.state.activeQuery !== '')
+
+       if(this.props.context.state.activeQuery !== '') {
            this.props.context.getVideos(undefined, this.props.context.state.activeQuery)
+               .then(() => {
+                   this.props.history.push("/");
+               });
+       }
     }
 
     render() {
@@ -49,4 +57,5 @@ const withContext = (Component: typeof Search) => {
         </AppContext.Consumer>
     )
 };
-export default withContext(Search);
+
+export default withRouter(withContext(Search));

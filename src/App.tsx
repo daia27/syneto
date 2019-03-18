@@ -96,7 +96,6 @@ export class App extends Component<{}, IAppState> {
     }
 
     async getVideos(categoryId: string, query: string = '') {
-
         const videosResponse: IVideoResponse = await youtube.get('/search', {
             params: {
                 type: 'video',

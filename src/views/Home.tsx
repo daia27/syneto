@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import {AppContext, IAppContext} from "../Context";
 import {ICategory, IVideoThumbnail} from "../App";
 import {VideoThumbnail} from "../components/VideoThumbnail";
+import {RouteComponentProps} from "react-router-dom";
 
-interface IHomeProps {
+interface IHomeProps extends RouteComponentProps {
     context: IAppContext;
 }
 
 class Home extends Component<IHomeProps> {
-
     renderVideos() {
         return this.props.context.state.videos.map((item: IVideoThumbnail) => {
             return (
